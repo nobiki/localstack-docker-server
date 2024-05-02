@@ -1,0 +1,14 @@
+networks:
+  localstack-net:
+    driver: bridge
+    name: localstack-net
+
+services:
+  fake:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM scratch
+    command: fake
+    networks:
+      localstack-net:

@@ -5,7 +5,7 @@ Script to build a [localstack](https://www.localstack.cloud/) environment with d
 - Debian version: `12.5` (bookworm)
 - Docker version: `26.1.1, build 4cf5afa`
 
-## Setting
+## Setup
 
 Create Docker Network (Only the first time)
 

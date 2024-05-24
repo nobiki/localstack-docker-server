@@ -9,7 +9,7 @@ services:
     image: localstack/localstack
     environment:
       # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
-      - SERVICES=s3,lambda,ecr
+      - SERVICES=s3,lambda,iam,cloudwatch
       - DEBUG=${DEBUG:-0}
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"

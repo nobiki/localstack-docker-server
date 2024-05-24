@@ -17,6 +17,6 @@ provider "aws" {
   endpoints {
     s3     = "http://localhost:4566" # LocalStack Gateway
     lambda = "http://localhost:4566"
-    ecr    = "http://localhost:4566"
+    iam    = "http://localhost:4566"
   }
 }

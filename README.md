@@ -22,7 +22,7 @@ Create localstack server (Only the first time)
 
 ```
 $ cd localstack-server/
-$ docker compose up
+$ docker compose up -d
 
 $ docker compose ps -a
 NAME                                    IMAGE                   COMMAND                  SERVICE             CREATED         STATUS                   PORTS
@@ -47,7 +47,10 @@ Enjoy development :)
 ## Create My Application
 $ cd app/
 
-## Containers IpAddress
+## IaC localstack ressources
+$ cd iac/tofu/
+
+## Show Containers IpAddress
 $ docker network inspect localstack-net | jq -r '.[0].Containers[] | [.Name, "-->", .IPv4Address] | @csv' | column -t -s "," | xargs -ICONTAINER echo "- CONTAINER"
 - app-web-1                              -->  172.20.0.3/16
 - localstack-server-localstack-server-1  -->  172.20.0.2/16

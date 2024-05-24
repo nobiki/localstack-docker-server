@@ -15,10 +15,8 @@ provider "aws" {
   skip_requesting_account_id  = true
 
   endpoints {
-    s3 = "http://localhost:4566" # LocalStack Gateway
+    s3     = "http://localhost:4566" # LocalStack Gateway
+    lambda = "http://localhost:4566"
+    ecr    = "http://localhost:4566"
   }
-}
-
-resource "aws_s3_bucket" "my-bucket" {
-  bucket = "my-tf-test-bucket"
 }

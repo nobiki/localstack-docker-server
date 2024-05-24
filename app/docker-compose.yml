@@ -1,0 +1,16 @@
+networks:
+  localstack-net:
+    driver: bridge
+    name: localstack-net
+    external: true
+
+services:
+  web:
+    image: nginx:latest
+    profiles: ["web"]  # docker compose --profile web up -d
+    networks:
+      localstack-net:
+        aliases:
+          - web
+    restart: always
+

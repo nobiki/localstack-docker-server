@@ -1,0 +1,16 @@
+name: tofu plan (dev)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "iac/tofu/environments/localstack/**"
+      - "iac/tofu/modules/**"
+    types: [synchronize, opened]
+
+jobs:
+  call-reusable-workflow:
+    uses: "./.github/workflows/reusable_tofu_plan.yml"
+    with:
+      aws_account_id: '************'
+      environment: 'localstack'
